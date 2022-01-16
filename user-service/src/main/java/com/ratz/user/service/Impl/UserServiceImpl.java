@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
     ResponseTemplatePOJO pojo = new ResponseTemplatePOJO();
     User user = repository.findByUserId(userId);
 
-    Department department = restTemplate.getForObject("http://localhost:9091/departments/" + user.getDepartmentId() , Department.class);
+    Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId() , Department.class);
 
     pojo.setUser(user);
     pojo.setDepartment(department);
